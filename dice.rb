@@ -14,14 +14,6 @@ get("/") do
   erb(:home)
 end
 
-# get("/zebra") do
-#  "We must add a route for each path we want to support"
-# end
-
-# get("/giraffe") do
-#  "Hopefully this shows up without having to restart the server"
-# end
-
 get("/dice/2/6") do
   first_die = rand(1..6)
   second_die = rand(1..6)
@@ -43,9 +35,9 @@ get("/dice/2/10") do
 end
 
 get("/dice/1/20") do
-  first_die = rand(1..20)
+  @die = rand(1..20)
 
- @outcome = "You rolled a #{first_die}."
+  @outcome = "You rolled a #{@die}."
 
   erb(:one_twenty)
 end
